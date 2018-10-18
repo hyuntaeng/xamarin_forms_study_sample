@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBingingSample.Basic.AlternativeCodeBindingPage"
+             Title="Alternative Code Binding">
+    
+    <StackLayout Padding="10, 0">
+        <Label x:Name="blabel"
+               Text="TEXT"
+               FontSize="40"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+        <Slider x:Name="bslider"
+                Minimum="-2"
+                Maximum="2"
+                VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+    
+</ContentPage>

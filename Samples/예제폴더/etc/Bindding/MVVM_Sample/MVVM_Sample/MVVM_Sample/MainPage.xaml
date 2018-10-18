@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM_Sample.MainPage"
+             
+             xmlns:local="clr-namespace:MVVM_Sample">
+
+    <StackLayout>
+        <StackLayout.BindingContext>
+            <local:MainPageViewModel />            
+        </StackLayout.BindingContext>
+
+        <Label Text="100"
+               FontSize="Large"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+
+        <Label Text="{Binding TargetLabel}"
+               FontSize="Large"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+
+        <Button Text="눌러보세요."
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding BtnClicked}"
+                CommandParameter="2"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:local="clr-namespace:ListColor"
+             
+             x:Class="ListColor.ColorListXaml"
+             Title="Xaml">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ScrollView>
+        <StackLayout Padding="6, 0">
+            <local:ColorFrame ColorName="Aqua" />
+            <local:ColorFrame ColorName="Black" />
+            <local:ColorFrame ColorName="Blue" />
+            <local:ColorFrame ColorName="Fuchsia" />
+            <local:ColorFrame ColorName="Gray" />
+            <local:ColorFrame ColorName="Green" />
+            <local:ColorFrame ColorName="Lime" />
+            <local:ColorFrame ColorName="Maroon" />
+            <local:ColorFrame ColorName="Navy" />
+            <local:ColorFrame ColorName="Olive" />
+            <local:ColorFrame ColorName="Purple" />
+            <local:ColorFrame ColorName="Pink" />
+            <local:ColorFrame ColorName="Red" />
+            <local:ColorFrame ColorName="Silver" />
+            <local:ColorFrame ColorName="Teal" />
+            <local:ColorFrame ColorName="White" />
+            <local:ColorFrame ColorName="Yellow" />
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

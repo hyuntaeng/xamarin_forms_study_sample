@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Xamarin.Forms;
+
+namespace CarouselPageSample.ModelCode
+{
+	public class ModelCode : CarouselPage
+    {
+		public ModelCode ()
+		{
+            Thickness padding;
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                case Device.Android:
+                    padding = new Thickness(0, 40, 0, 0);
+                    break;
+                default:
+                    padding = new Thickness();
+                    break;
+            }
+
+            ItemTemplate = new DataTemplate(() =>
+            {
+                var nameLabel = new Label
+                {
+                    FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                    HorizontalOptions = LayoutOptions.Center
+                };
+                nameLabel.SetBinding(Label.TextProperty, "Name");
+
+                var colorBoxView = new BoxView
+                {
+                    WidthRequest = 200,
+                    HeightRequest = 200,
+                    HorizontalOptions = LayoutOptions.Center,
+                    VerticalOptions = LayoutOptions.CenterAndExpand
+                };
+                colorBoxView.SetBinding(BoxView.ColorProperty, "Color");
+
+                return new ContentPage
+                {
+                    Padding = padding,
+                    Content = new StackLayout
+                    {
+                        Children = {
+                            nameLabel,
+                            colorBoxView
+                        }
+                    }
+                };
+            });
+
+            ItemsSource = ColorsDataModel.All;
+        }
+    }
+}

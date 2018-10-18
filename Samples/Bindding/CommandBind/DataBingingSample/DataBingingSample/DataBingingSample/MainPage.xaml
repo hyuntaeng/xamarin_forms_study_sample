@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataBingingSample"
+             x:Class="DataBingingSample.MainPage"
+             Title="Binding Demos"
+             Padding="10">
+
+    <!-- local:Basic, Mode, Path, Value 는 어떤 기능이 아니라 폴더경로를 말하는것. -->
+    <TableView Intent="Menu">
+        <TableRoot>
+            <TableSection Title="Basic Bindings">
+                <TextCell Text="기본 바인딩 Code"
+                          TextColor="DarkSlateBlue"
+                          Detail="Define a data-binding in code"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Basic.BasicCodeBindingPage}" />
+
+                <TextCell Text="기본 바인딩 Xaml"
+                          TextColor="DarkSlateBlue"
+                          Detail="Define a data-binding in XAML"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Basic.BasicXamlBindingPage}" />
+
+                <TextCell Text="연결 바인딩 Code"
+                          TextColor="DarkSlateBlue"
+                          Detail="Define a data-binding in code without a BindingContext"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Basic.AlternativeCodeBindingPage}" />
+
+                <TextCell Text="연결 바인딩 Xaml"
+                          TextColor="DarkSlateBlue"
+                          Detail="Define a data-binding in XAML without a BindingContext"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Basic.AlternativeXamlBindingPage}" />
+                
+                <TextCell Text="바인딩 상속"
+                          TextColor="DarkSlateBlue"
+                          Detail="Simplify bindings with an inherited BindingContext"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Basic.BindingContextInheritancePage}" />
+            </TableSection>
+
+            
+            <TableSection Title="Binding Mode">
+
+                <TextCell Text="역으로 연결하는 바인딩"
+                          TextColor="DarkSlateBlue"
+                          Detail="Reverse the source and the target"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Mode.ReverseBindingPage}" />
+
+                <TextCell Text="색깔 선택하기 "
+                          TextColor="DarkSlateBlue"
+                          Detail="Use a ViewModel for HSL Color"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Mode.SimpleColorSelectorPage}" />
+
+                <TextCell Text="Sample Settings"
+                          TextColor="DarkSlateBlue"
+                          Detail="Create a ViewModel for Settings"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Mode.SampleSettingsPage}" />
+            </TableSection>
+
+            <TableSection Title="Binding Path">
+
+                <TextCell Text="페이지 경로 바인딩"
+                          TextColor="DarkSlateBlue"
+                          Detail="Explore the various ways you can use Path"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Path.PathVariationsPage}" />
+
+            </TableSection>
+
+            <TableSection Title="String Formatting">
+
+                <TextCell Text="String Formatting"
+                          TextColor="DarkSlateBlue"
+                          Detail="Use standard .NET formatting specfications"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:StringForm.StringFormattingPage}" />
+
+                <TextCell Text="Better Color Selector"
+                          TextColor="DarkSlateBlue"
+                          Detail="Display Slider values for HSL Color"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:StringForm.BetterColorSelectorPage}" />
+
+            </TableSection>
+            
+            <TableSection Title="Binding Value Converters">
+
+                <TextCell Text="Enable Buttons"
+                          TextColor="DarkSlateBlue"
+                          Detail="Use a value converter to enable buttons"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Value.EnableButtonsPage}" />
+
+                <TextCell Text="Switch Indicators"
+                          TextColor="DarkSlateBlue"
+                          Detail="Show the value of a Switch in various ways"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Value.SwitchIndicatorsPage}" />
+
+                <TextCell Text="RGB Color Selector"
+                          TextColor="DarkSlateBlue"
+                          Detail="Display hexadecimal color components"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Value.RgbColorSelectorPage}" />
+
+            </TableSection>
+
+            <TableSection Title="Commanding">
+
+                <TextCell Text="Person Entry"
+                          TextColor="DarkSlateBlue"
+                          Detail="Use the Command interface in a view model"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Commanding.PersonEntryPage}" />
+
+                <TextCell Text="Decimal Keypad"
+                          TextColor="DarkSlateBlue"
+                          Detail="Use the Command interface for a keypad"
+                          Command="{Binding MyNavigateCommand}"
+                          CommandParameter="{x:Type local:Commanding.DecimalKeypadPage}" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+
+</ContentPage>

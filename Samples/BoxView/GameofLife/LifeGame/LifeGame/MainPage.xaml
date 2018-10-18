@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LifeGame"
+             x:Class="LifeGame.MainPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="0, 10" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="Margin" Value="0, 5" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid BackgroundColor="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ScrollView x:Name="aboutText"
+                    Margin="20"
+                    IsVisible="False">
+
+            <StackLayout Padding="20"
+                         BackgroundColor="Green"
+                         Opacity="0.5">
+
+                <Label Text="The Game of Life"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center" />
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+
+                            <Span Text="BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" 
+                                  FontAttributes="Italic" />
+
+                            <Span Text="." />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" />
+                            <Span Text="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" 
+                                  FontAttributes="Bold" />
+
+                            <Span Text="DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label Text="EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE" />
+
+                <Label Text="https://www.naver.com/"
+                       TextColor="Blue"
+                       FontAttributes="Italic"
+                       HorizontalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnHyperlinkTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Button Text="OK"
+                        Clicked="OnCloseButtonClicked" />
+            </StackLayout>
+
+        </ScrollView>
+
+        <StackLayout BackgroundColor="White"
+                     Grid.Row="1"
+                     Orientation="Horizontal">
+            <Button x:Name="runButton"
+                    Text="Run!"
+                    Clicked="OnRunButtonClicked" />
+
+            <Button x:Name="clearButton"
+                    Text="Clear"
+                    Clicked="OnClearButtonClicked" />
+
+            <Button Text="About"
+                    Clicked="OnAboutButtonClicked" />
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

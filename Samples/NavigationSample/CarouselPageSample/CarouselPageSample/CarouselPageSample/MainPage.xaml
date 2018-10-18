@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CarouselPageSample"
+             x:Class="CarouselPageSample.MainPage">
+
+    <StackLayout>
+        <StackLayout.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Button">
+                    <Setter Property="TextColor" Value="White" />
+                    <Setter Property="FontSize" Value="Large" />
+                    <Setter Property="BorderColor" Value="Black" />
+                    <Setter Property="BackgroundColor" Value="Black" />
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                    <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                </Style>
+            </ResourceDictionary>
+        </StackLayout.Resources>
+
+        <Button Text="CarouselCode" 
+                Command="{Binding MyNavigateCommand}"
+                CommandParameter="{x:Type local:Nomal.CarouselCode}" />
+
+        <Button Text="CarouselXaml" 
+                Command="{Binding MyNavigateCommand}"
+                CommandParameter="{x:Type local:Nomal.CarouselXaml}" />
+
+        <Button Text="ModelCode" 
+                Command="{Binding MyNavigateCommand}"
+                CommandParameter="{x:Type local:ModelCode.ModelCode}" />
+
+        <Button Text="ModelXaml" 
+                Command="{Binding MyNavigateCommand}"
+                CommandParameter="{x:Type local:ModelCode.ModelXaml}" />
+    </StackLayout>
+
+</ContentPage>

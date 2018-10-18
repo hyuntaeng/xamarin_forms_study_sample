@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ButtenSample.NumberPadXaml"
+             Title="NumXaml">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center"
+                     HorizontalOptions="Center">
+
+            <Label x:Name="displayLabel"
+                   FontSize="Large"
+                   VerticalOptions="Center"
+                   HorizontalOptions="End"/>
+
+            <Button x:Name="backspaceButton"
+                    Text="→"
+                    FontSize="Large"
+                    IsEnabled="False"
+                    Clicked="OnBackspaceButtonClicked"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="1" FontSize="Large" StyleId="1" Clicked="OnDigitButtonClicked"/>
+                <Button Text="2" FontSize="Large" StyleId="2" Clicked="OnDigitButtonClicked"/>
+                <Button Text="3" FontSize="Large" StyleId="3" Clicked="OnDigitButtonClicked"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="4" FontSize="Large" StyleId="4" Clicked="OnDigitButtonClicked"/>
+                <Button Text="5" FontSize="Large" StyleId="5" Clicked="OnDigitButtonClicked"/>
+                <Button Text="6" FontSize="Large" StyleId="6" Clicked="OnDigitButtonClicked"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="7" FontSize="Large" StyleId="7" Clicked="OnDigitButtonClicked"/>
+                <Button Text="8" FontSize="Large" StyleId="8" Clicked="OnDigitButtonClicked"/>
+                <Button Text="9" FontSize="Large" StyleId="9" Clicked="OnDigitButtonClicked"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="0" FontSize="Large" StyleId="0" Clicked="OnDigitButtonClicked"
+                        HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
